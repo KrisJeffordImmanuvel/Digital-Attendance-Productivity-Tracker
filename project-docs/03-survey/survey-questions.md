@@ -1,33 +1,38 @@
 # Survey Questions
 
 **Venture:** Digital Attendance and Productivity Tracker for Students
-**Purpose:** To check the assumptions listed in `01-problem-and-idea.md` (section 7) using **real** responses from students and faculty.
+**Purpose:** To check the assumptions listed in `01-problem-and-idea.md` (section 7) using **real** responses from students.
 
-There are two short forms:
+We are surveying **students only** (no faculty survey).
 
 | Form | Questions | Time to answer | Target responses |
 |---|---|---|---|
-| A. Student survey | 12 (S1–S12) | about 3 minutes | **25–30 or more** |
-| B. Faculty survey | 8 (F1–F8) | about 2 minutes | **5 or more** |
+| Student survey | 12 (S1–S12) | about 3 minutes | **25–30 or more** |
 
 ---
 
 ## How to set this up in Google Forms
 
-1. Create **two separate Google Forms**: one for students and one for faculty.
-2. Copy each question **exactly as written** (without the "S1." / "F1." label). The analysis script matches the column headers in the export to this wording. If you change the wording, also update `QUESTIONS` at the top of `analyze_survey.py`.
+> **Fastest way:** run `create_google_forms.gs`. It builds the student form automatically in your Google account, with the exact wording, question types, "Other" options, 1–5 scales and the "up to 3" limit on S12, plus a thank-you message shown after submitting. Open <https://script.google.com>, click **New project**, paste the whole file, click **Save**, choose `createStudentForm` and click **Run**. Allow the permission prompt, then copy the share and edit links from the **Execution log**.
+>
+> To do it by hand instead, follow the steps below.
+
+1. Create a new Google Form.
+2. Copy each question **exactly as written** (without the "S1." label). The analysis script matches the column headers in the export to this wording. If you change the wording, also update `QUESTIONS` at the top of `analyze_survey.py`.
 3. Choose the question type shown in the **Type** line of each question.
 4. For linear scales, set the range to **1 to 5** and type the two end labels shown.
 5. **Do not use commas inside checkbox options.** Google Forms joins several ticked answers with commas, so a comma inside an option would break the count. (All options below already avoid commas.)
-6. Mark every question as **Required**, except S12's "Other" text box and F8.
+6. Mark every question as **Required**.
 7. Turn **off** "Collect email addresses" so that responses stay anonymous.
 8. Add this line to the form description:
    > *This is an anonymous survey for a college entrepreneurship project. Your answers are used only to study this problem and will not be shared.*
-9. To export later: **Responses → three-dot menu → Download responses (.csv)**.
+9. Add a thank-you message: **Settings → Presentation → Confirmation message**, then paste:
+   > *Thank you for filling in our survey! 🙏 Your response has been recorded.*
+10. To export later: **Responses → three-dot menu → Download responses (.csv)**.
 
 ---
 
-## Form A: Student survey
+## Student survey
 
 **Form title:** Student Survey: Attendance and Study Habits
 
@@ -105,78 +110,19 @@ Type: Checkboxes (in Google Forms: Response validation → "Select at most" → 
 
 ---
 
-## Form B: Faculty survey
-
-**Form title:** Faculty Survey: Attendance Process
-
-**F1. Which department do you teach in?**
-Type: Multiple choice
-- CSE
-- IT
-- ECE
-- EEE
-- Mechanical
-- Civil
-- Science and Humanities
-- Other
-
-> [VERIFY] Change this list to match the departments in our college (and update `analyze_survey.py` to match).
-
-**F2. How do you currently take attendance?**
-Type: Multiple choice
-- Roll call
-- Paper sheet
-- Biometric or ID card machine
-- An app or software
-- Other
-
-**F3. On average, how many minutes of each lecture do you spend on attendance?**
-Type: Multiple choice
-- Less than 2 minutes
-- 2 to 5 minutes
-- 5 to 10 minutes
-- More than 10 minutes
-
-**F4. How often do you face proxy attendance problems?**
-Type: Linear scale 1–5 (1 = Never, 5 = Very often)
-
-**F5. How much time do you spend each month on attendance registers and reports?**
-Type: Multiple choice
-- Less than 1 hour
-- 1 to 3 hours
-- 3 to 6 hours
-- More than 6 hours
-
-**F6. How willing would you be to use a QR-based attendance app that blocks proxies (changing QR code + campus location check + one device per student)?**
-Type: Linear scale 1–5 (1 = Not willing, 5 = Very willing)
-
-**F7. What concerns would you have about using such an app? (Tick all that apply)**
-Type: Checkboxes
-- Some students do not have smartphones
-- Poor mobile network in classrooms
-- Student privacy
-- Time needed to learn a new system
-- No projector or screen in some rooms
-- Technical problems during class
-- No concerns
-- Other
-
-**F8. Any suggestions or features you would like to see?**
-Type: Short answer (optional)
-
----
-
 ## Question-to-assumption map
 
-| Assumption (from 01) | Student questions | Faculty questions |
-|---|---|---|
-| A1 Smartphone access | S1 | F7 |
-| A2 Class time lost | S3 | F3 |
-| A3 Proxy problem | S4 | F4 |
-| A4 Low awareness of attendance % | S5, S6 | n/a |
-| A5 Focus and study-tracking problems | S8, S9 | n/a |
-| A6 Interest in a combined app | S11, S12 | n/a |
-| A7 Reporting effort | n/a | F5 |
-| A8 Faculty willingness | n/a | F6, F7 |
-| A9 Acceptance of location check | S10 | F7 |
-| (Context) Current method and study hours | S2, S7 | F1, F2 |
+| Assumption (from 01) | Student questions |
+|---|---|
+| A1 Smartphone access | S1 |
+| A2 Class time lost | S3 |
+| A3 Proxy problem | S4 |
+| A4 Low awareness of attendance % | S5, S6 |
+| A5 Focus and study-tracking problems | S8, S9 |
+| A6 Interest in a combined app | S11, S12 |
+| A7 Faculty reporting effort | Not covered (no faculty survey) |
+| A8 Faculty willingness to adopt | Not covered (no faculty survey) |
+| A9 Acceptance of location check | S10 |
+| (Context) Current method and study hours | S2, S7 |
+
+> A7 and A8 are about faculty, so this student survey cannot test them. In the report, list them as **not yet validated**. If there is time, a short chat with our guide or 2–3 faculty members can give an early signal.

@@ -53,18 +53,18 @@ We will build a mobile-friendly web app (a Progressive Web App, or PWA) that wor
 
 ## 7. Assumptions we must validate with the survey
 
-Question IDs (S = student, F = faculty) refer to `03-survey/survey-questions.md`.
+Question IDs (S1–S12, student survey) refer to `03-survey/survey-questions.md`.
 
 | # | Assumption | Tested by | What would support it |
 |---|---|---|---|
 | A1 | Most students have their own smartphone with a working camera and internet on campus | S1 | A large majority answer "Yes, my own phone" |
-| A2 | Taking attendance wastes noticeable class time | S3, F3 | Most answers are "2 to 5 minutes" or more per class |
-| A3 | Proxy attendance happens often enough to be a real problem | S4, F4 | Average score of 3 or higher on the 1–5 scale |
+| A2 | Taking attendance wastes noticeable class time | S3 | Most answers are "2 to 5 minutes" or more per class |
+| A3 | Proxy attendance happens often enough to be a real problem | S4 | Average score of 3 or higher on the 1–5 scale |
 | A4 | Students do not know their current attendance % | S5, S6 | Many answer "No" or "Only roughly" |
 | A5 | Students struggle to stay focused and track study time | S8, S9 | Average focus difficulty of 3 or higher; few use any tracking tool |
 | A6 | Students are interested in a combined attendance + productivity app | S11, S12 | Average interest of 4 or higher; productivity features are picked as well as attendance ones |
-| A7 | Faculty spend significant effort on attendance reports | F5 | Most report 1 hour or more per month |
-| A8 | Faculty are willing to switch to a QR-based system | F6, F7 | Average willingness of 3.5 or higher; concerns are ones we can solve |
-| A9 | Students accept a location check only at the moment of scanning | S10, F7 | Most students are comfortable (4–5); few faculty pick privacy as a concern |
+| A7 | Faculty spend significant effort on attendance reports | Not covered: student-only survey | Not tested by the survey. List as "not yet validated" (optional: ask our guide or 2–3 faculty informally) |
+| A8 | Faculty are willing to switch to a QR-based system | Not covered: student-only survey | Not tested by the survey. List as "not yet validated" (optional: ask our guide or 2–3 faculty informally) |
+| A9 | Students accept a location check only at the moment of scanning | S10 | Most students are comfortable (4–5) |
 
 > If the survey does **not** support an assumption, we will write that honestly in our report and change the idea (for example, drop or reprioritise a feature).

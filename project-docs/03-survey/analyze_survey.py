@@ -1,14 +1,14 @@
 """
 Survey analysis for "Digital Attendance and Productivity Tracker for Students".
 
-Reads a CSV exported from Google Forms (Responses -> Download responses (.csv))
+Reads the student survey CSV exported from Google Forms
+(Responses -> Download responses (.csv))
 and saves:
   * one chart (PNG) per question
   * survey-summary.md with counts and percentages
 
 Usage:
-    python analyze_survey.py <exported.csv>                      # student form
-    python analyze_survey.py <exported.csv> --form faculty       # faculty form
+    python analyze_survey.py <exported.csv>
     python analyze_survey.py <exported.csv> --out my-results     # custom output folder
 
 Needs:  pip install matplotlib
@@ -38,71 +38,43 @@ PIE_COLOURS = [TEAL, ORANGE, GREY, "#C9D1D3"]
 # Question definitions. These must match the wording in survey-questions.md.
 # type: "choice" (multiple choice), "checkbox", "scale" (1-5), "text"
 # ---------------------------------------------------------------------------
-QUESTIONS = {
-    "student": [
-        {"id": "S1", "type": "choice",
-         "text": "Do you have a smartphone that you can use during class?",
-         "options": ["Yes, my own smartphone", "Yes, but it is shared with family", "No"]},
-        {"id": "S2", "type": "choice",
-         "text": "How is attendance usually taken in your classes?",
-         "options": ["Faculty calls out names (roll call)", "A paper sheet is passed around",
-                     "Biometric or ID card machine", "An app or QR code", "Other"]},
-        {"id": "S3", "type": "choice",
-         "text": "About how much class time is spent on taking attendance in one lecture?",
-         "options": ["Less than 2 minutes", "2 to 5 minutes", "5 to 10 minutes", "More than 10 minutes"]},
-        {"id": "S4", "type": "scale", "low": "Never", "high": "Very often",
-         "text": "How often do you notice proxy attendance (someone marking attendance for an absent student) in your classes?"},
-        {"id": "S5", "type": "choice",
-         "text": "Do you know your current attendance percentage in each subject?",
-         "options": ["Yes, exactly", "Only roughly", "No"]},
-        {"id": "S6", "type": "choice",
-         "text": "Have you ever been below or close to the 75% attendance requirement?",
-         "options": ["Yes, I was below 75%", "Yes, I was close (75% to 80%)", "No", "I don't know"]},
-        {"id": "S7", "type": "choice",
-         "text": "On a normal day, how many hours do you study outside class?",
-         "options": ["Less than 1 hour", "1 to 2 hours", "2 to 4 hours", "More than 4 hours"]},
-        {"id": "S8", "type": "checkbox",
-         "text": "How do you currently plan or track your study time?",
-         "options": ["I don't plan or track it", "Paper notes or a diary", "A to-do list app",
-                     "A Pomodoro or focus timer app", "A calendar or planner app", "Other"]},
-        {"id": "S9", "type": "scale", "low": "Very easy", "high": "Very hard",
-         "text": "How hard is it for you to stay focused while studying (for example, because of phone distractions)?"},
-        {"id": "S10", "type": "scale", "low": "Not comfortable at all", "high": "Very comfortable",
-         "text": "How comfortable would you be if the app checked your location only at the moment you scan the attendance QR code?"},
-        {"id": "S11", "type": "scale", "low": "Not interested", "high": "Very interested",
-         "text": "How interested would you be in one free app that marks attendance by scanning a QR code AND helps you track your study time?"},
-        {"id": "S12", "type": "checkbox",
-         "text": "Which features would matter most to you? (Choose up to 3)",
-         "options": ["Quick QR attendance", "Live attendance % for each subject", "Alert when I go below 75%",
-                     "Pomodoro focus timer", "To-do tasks and daily goals", "Study time analytics", "Other"]},
-    ],
-    "faculty": [
-        {"id": "F1", "type": "choice",
-         "text": "Which department do you teach in?",
-         "options": ["CSE", "IT", "ECE", "EEE", "Mechanical", "Civil", "Science and Humanities", "Other"]},
-        {"id": "F2", "type": "choice",
-         "text": "How do you currently take attendance?",
-         "options": ["Roll call", "Paper sheet", "Biometric or ID card machine", "An app or software", "Other"]},
-        {"id": "F3", "type": "choice",
-         "text": "On average, how many minutes of each lecture do you spend on attendance?",
-         "options": ["Less than 2 minutes", "2 to 5 minutes", "5 to 10 minutes", "More than 10 minutes"]},
-        {"id": "F4", "type": "scale", "low": "Never", "high": "Very often",
-         "text": "How often do you face proxy attendance problems?"},
-        {"id": "F5", "type": "choice",
-         "text": "How much time do you spend each month on attendance registers and reports?",
-         "options": ["Less than 1 hour", "1 to 3 hours", "3 to 6 hours", "More than 6 hours"]},
-        {"id": "F6", "type": "scale", "low": "Not willing", "high": "Very willing",
-         "text": "How willing would you be to use a QR-based attendance app that blocks proxies (changing QR code + campus location check + one device per student)?"},
-        {"id": "F7", "type": "checkbox",
-         "text": "What concerns would you have about using such an app? (Tick all that apply)",
-         "options": ["Some students do not have smartphones", "Poor mobile network in classrooms",
-                     "Student privacy", "Time needed to learn a new system",
-                     "No projector or screen in some rooms", "Technical problems during class",
-                     "No concerns", "Other"]},
-        {"id": "F8", "type": "text",
-         "text": "Any suggestions or features you would like to see?"},
-    ],
-}
+QUESTIONS = [
+    {"id": "S1", "type": "choice",
+     "text": "Do you have a smartphone that you can use during class?",
+     "options": ["Yes, my own smartphone", "Yes, but it is shared with family", "No"]},
+    {"id": "S2", "type": "choice",
+     "text": "How is attendance usually taken in your classes?",
+     "options": ["Faculty calls out names (roll call)", "A paper sheet is passed around",
+                 "Biometric or ID card machine", "An app or QR code", "Other"]},
+    {"id": "S3", "type": "choice",
+     "text": "About how much class time is spent on taking attendance in one lecture?",
+     "options": ["Less than 2 minutes", "2 to 5 minutes", "5 to 10 minutes", "More than 10 minutes"]},
+    {"id": "S4", "type": "scale", "low": "Never", "high": "Very often",
+     "text": "How often do you notice proxy attendance (someone marking attendance for an absent student) in your classes?"},
+    {"id": "S5", "type": "choice",
+     "text": "Do you know your current attendance percentage in each subject?",
+     "options": ["Yes, exactly", "Only roughly", "No"]},
+    {"id": "S6", "type": "choice",
+     "text": "Have you ever been below or close to the 75% attendance requirement?",
+     "options": ["Yes, I was below 75%", "Yes, I was close (75% to 80%)", "No", "I don't know"]},
+    {"id": "S7", "type": "choice",
+     "text": "On a normal day, how many hours do you study outside class?",
+     "options": ["Less than 1 hour", "1 to 2 hours", "2 to 4 hours", "More than 4 hours"]},
+    {"id": "S8", "type": "checkbox",
+     "text": "How do you currently plan or track your study time?",
+     "options": ["I don't plan or track it", "Paper notes or a diary", "A to-do list app",
+                 "A Pomodoro or focus timer app", "A calendar or planner app", "Other"]},
+    {"id": "S9", "type": "scale", "low": "Very easy", "high": "Very hard",
+     "text": "How hard is it for you to stay focused while studying (for example, because of phone distractions)?"},
+    {"id": "S10", "type": "scale", "low": "Not comfortable at all", "high": "Very comfortable",
+     "text": "How comfortable would you be if the app checked your location only at the moment you scan the attendance QR code?"},
+    {"id": "S11", "type": "scale", "low": "Not interested", "high": "Very interested",
+     "text": "How interested would you be in one free app that marks attendance by scanning a QR code AND helps you track your study time?"},
+    {"id": "S12", "type": "checkbox",
+     "text": "Which features would matter most to you? (Choose up to 3)",
+     "options": ["Quick QR attendance", "Live attendance % for each subject", "Alert when I go below 75%",
+                 "Pomodoro focus timer", "To-do tasks and daily goals", "Study time analytics", "Other"]},
+]
 
 SAMPLE_FILE_NAME = "sample-test.csv"
 SAMPLE_MARKER = "TEST DATA"
@@ -263,18 +235,16 @@ def table(counts, base, label="Answer"):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Analyse the exported Google Forms survey CSV.")
+    parser = argparse.ArgumentParser(description="Analyse the exported student survey CSV.")
     parser.add_argument("csv_file", help="CSV downloaded from Google Forms")
-    parser.add_argument("--form", choices=["student", "faculty"], default="student",
-                        help="which questionnaire the CSV comes from (default: student)")
     parser.add_argument("--out", default=None,
-                        help="output folder (default: output-<form> next to this script)")
+                        help="output folder (default: output-student next to this script)")
     args = parser.parse_args()
 
     if not os.path.exists(args.csv_file):
         sys.exit(f"ERROR: file not found: {args.csv_file}")
 
-    questions = QUESTIONS[args.form]
+    questions = QUESTIONS
     header, rows = read_csv(args.csv_file)
     sample = is_sample(args.csv_file, header, rows)
 
@@ -285,7 +255,7 @@ def main():
         print("that the script works. Do NOT put these charts in your report.")
         print("=" * 70)
 
-    out_dir = args.out or os.path.join(os.path.dirname(os.path.abspath(__file__)), f"output-{args.form}")
+    out_dir = args.out or os.path.join(os.path.dirname(os.path.abspath(__file__)), "output-student")
     if sample and args.out is None:
         out_dir += "-SAMPLE"
     os.makedirs(out_dir, exist_ok=True)
@@ -297,8 +267,7 @@ def main():
         print("         Check that the Google Form wording matches survey-questions.md.")
 
     n = len(rows)
-    title = "Student" if args.form == "student" else "Faculty"
-    md = [f"# {title} Survey Summary", ""]
+    md = ["# Student Survey Summary", ""]
     if sample:
         md += ["> **WARNING: SAMPLE TEST DATA. These are NOT real responses. Do not use these results in the report.**", ""]
     md += [f"- Source file: `{os.path.basename(args.csv_file)}`",
