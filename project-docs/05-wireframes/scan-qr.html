@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scan QR · Wireframe</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="bg-white border-b border-gray-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+      <a href="index.html" class="font-medium underline underline-offset-2">← All screens</a>
+      <span class="text-gray-400">|</span>
+      <span class="font-semibold">3. Scan QR</span>
+      <span class="text-xs px-2 py-0.5 rounded bg-gray-200 text-gray-700">Student · Mobile 390×844</span>
+      <span class="ml-auto text-xs text-gray-500">Digital Attendance &amp; Productivity Tracker · Wireframe v0.1</span>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-4 py-6 flex flex-col lg:flex-row gap-6 items-center lg:items-start justify-center">
+    <div class="phone">
+      <div class="flex justify-between items-center px-6 pt-3 pb-1 text-xs text-gray-500">
+        <span>9:41</span><span>▂▄▆ 4G ▭</span>
+      </div>
+      <div class="phone-screen">
+        <div class="px-5 pt-3 pb-6 flex flex-col gap-4">
+          <div class="flex items-center gap-3"><a href="student-home.html" class="text-lg" aria-label="Back">←</a><h1 class="text-lg font-bold">Scan attendance QR</h1></div>
+          <p class="text-xs text-gray-500">Wireframe state switcher (not part of the app):</p>
+          <div class="grid grid-cols-3 text-xs border border-gray-400 rounded-lg overflow-hidden" role="tablist">
+            <button data-state="scan" class="state-btn py-2 bg-gray-800 text-white">Scanning</button>
+            <button data-state="ok" class="state-btn py-2 border-l border-gray-400">Success</button>
+            <button data-state="fail" class="state-btn py-2 border-l border-gray-400">Failure</button>
+          </div>
+
+          <!-- STATE: SCANNING -->
+          <div id="state-scan" class="flex flex-col gap-4">
+            <div class="relative aspect-square rounded-2xl bg-gray-800 flex items-center justify-center overflow-hidden">
+              <span class="text-gray-400 text-sm">[ Camera preview ]</span>
+              <div class="absolute inset-10 border-4 border-white/80 rounded-xl"></div>
+              <div class="absolute left-10 right-10 top-1/2 h-0.5 bg-white/70"></div>
+            </div>
+            <p class="text-center text-sm text-gray-600">Point your camera at the QR on the projector.<br>The code changes every 10 seconds.</p>
+            <ul class="text-xs text-gray-600 border border-gray-300 rounded-lg p-3 space-y-1">
+              <li>📷 Camera: allowed</li>
+              <li>📍 Location: allowed (checked only now, while scanning)</li>
+              <li>📱 Device: registered ✓</li>
+            </ul>
+            <button class="border border-gray-400 rounded-lg py-2 text-sm">Turn on flash</button>
+          </div>
+
+          <!-- STATE: SUCCESS -->
+          <div id="state-ok" class="state-hidden flex flex-col gap-4 items-center text-center">
+            <div class="w-24 h-24 rounded-full border-4 border-gray-900 flex items-center justify-center text-5xl">✓</div>
+            <h2 class="text-xl font-bold">Marked present</h2>
+            <p class="text-sm text-gray-600">Operating Systems · 10:00 period<br>Wed, 10:02:17 AM</p>
+            <ul class="w-full text-left text-sm border border-gray-300 rounded-lg p-3 space-y-1">
+              <li>✓ Code is current (not expired)</li>
+              <li>✓ You are on campus</li>
+              <li>✓ Registered device</li>
+              <li>✓ First scan for this session</li>
+            </ul>
+            <p class="text-sm">Operating Systems is now <b>73%</b>. Two more classes to reach 75%.</p>
+            <a href="student-home.html" class="btn-teal w-full rounded-lg py-3 font-semibold">Back to Home</a>
+          </div>
+
+          <!-- STATE: FAILURE -->
+          <div id="state-fail" class="state-hidden flex flex-col gap-4 items-center text-center">
+            <div class="w-24 h-24 rounded-full border-4 border-dashed border-gray-900 flex items-center justify-center text-5xl">✕</div>
+            <h2 class="text-xl font-bold">Not marked</h2>
+            <p class="text-sm text-gray-700 font-medium">This code has expired. Please scan the QR that is on screen now.</p>
+            <div class="w-full text-left text-xs text-gray-600 border border-gray-300 rounded-lg p-3">
+              <p class="font-semibold mb-1">Other possible messages:</p>
+              <ul class="list-disc pl-4 space-y-1">
+                <li>You must be on campus to mark attendance.</li>
+                <li>This is not your registered device. <a href="profile.html" class="underline">Request device change</a></li>
+                <li>You are already marked present for this class.</li>
+                <li>This session has ended. Contact your faculty.</li>
+              </ul>
+            </div>
+            <button data-state="scan" class="state-btn btn-teal w-full rounded-lg py-3 font-semibold">Scan again</button>
+            <a href="student-home.html" class="text-sm underline">Back to Home</a>
+          </div>
+        </div>
+      </div>
+      <nav class="flex border-t border-gray-300 bg-white">
+        <a href="student-home.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">⌂</span>Home</a>
+        <a href="scan-qr.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-900 font-semibold border-t-2 border-gray-900" aria-current="page"><span class="text-lg leading-none">▣</span>Scan</a>
+        <a href="focus-timer.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">◷</span>Focus</a>
+        <a href="tasks.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">☑</span>Tasks</a>
+        <a href="profile.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">☺</span>Profile</a>
+      </nav>
+    </div>
+    <aside class="w-full lg:w-80 bg-white border border-gray-300 rounded-xl p-5 text-sm self-start">
+      <h2 class="font-bold text-base mb-3">📝 Wireframe notes</h2>
+      <h3 class="font-semibold text-gray-700">Purpose</h3>
+      <p class="text-gray-700 mb-3">Marks attendance by scanning the faculty's rotating QR. The server checks the token, geofence, device and duplicates, and the result is shown clearly.</p>
+      <h3 class="font-semibold text-gray-700">Key elements</h3>
+      <ul class="list-disc pl-5 text-gray-700 mb-3 space-y-1">
+          <li>Camera placeholder with a scan frame</li>
+          <li>Permission and device status (location is used only during the scan)</li>
+          <li><b>Success</b> state: subject, time, the 4 checks passed, updated %</li>
+          <li><b>Failure</b> state: one clear reason plus a next step</li>
+      </ul>
+      <h3 class="font-semibold text-gray-700">Interactions</h3>
+      <ul class="list-disc pl-5 text-gray-700 mb-3 space-y-1">
+          <li>Use the grey switcher to preview the Scanning / Success / Failure states</li>
+          <li>Success → Back to Home</li>
+          <li>Failure → Scan again / Request device change</li>
+      </ul>
+      <h3 class="font-semibold text-gray-700">Linked features</h3>
+      <p class="text-gray-700">ST-2, ST-3 <span class="text-gray-500">(see 04-features-and-system-flow.md)</span></p>
+    </aside>
+  </main>
+<script>
+  // Wireframe-only: switch between the three screen states
+  document.querySelectorAll('.state-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var s = btn.dataset.state;
+      ['scan', 'ok', 'fail'].forEach(function (k) {
+        document.getElementById('state-' + k).classList.toggle('state-hidden', k !== s);
+      });
+      document.querySelectorAll('[role=tablist] .state-btn').forEach(function (b) {
+        var on = b.dataset.state === s;
+        b.classList.toggle('bg-gray-800', on);
+        b.classList.toggle('text-white', on);
+      });
+    });
+  });
+</script>
+</body>
+</html>

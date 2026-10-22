@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile · Wireframe</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="bg-white border-b border-gray-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+      <a href="index.html" class="font-medium underline underline-offset-2">← All screens</a>
+      <span class="text-gray-400">|</span>
+      <span class="font-semibold">8. Profile</span>
+      <span class="text-xs px-2 py-0.5 rounded bg-gray-200 text-gray-700">Student · Mobile 390×844</span>
+      <span class="ml-auto text-xs text-gray-500">Digital Attendance &amp; Productivity Tracker · Wireframe v0.1</span>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-4 py-6 flex flex-col lg:flex-row gap-6 items-center lg:items-start justify-center">
+    <div class="phone">
+      <div class="flex justify-between items-center px-6 pt-3 pb-1 text-xs text-gray-500">
+        <span>9:41</span><span>▂▄▆ 4G ▭</span>
+      </div>
+      <div class="phone-screen">
+        <div class="px-5 pt-3 pb-6 flex flex-col gap-4">
+          <h1 class="text-lg font-bold">Profile</h1>
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center font-bold text-xl">KJ</div>
+            <div><p class="font-bold">Kris Jefford I</p><p class="text-sm text-gray-500">21CS045 · CSE-3A · Semester 5</p><p class="text-xs text-gray-500">Class advisor: Prof. Demo Faculty</p></div>
+          </div>
+          <div class="border border-gray-300 rounded-xl p-4 text-sm">
+            <p class="font-semibold mb-1">📱 Registered device</p>
+            <p class="text-gray-600">Android phone · Chrome<br>Registered on 12 Jul 2026</p>
+            <button class="mt-3 w-full border border-gray-500 rounded-lg py-2">Request device change</button>
+            <p class="text-[11px] text-gray-500 mt-1">Needs admin approval (max one change per 30 days).</p>
+          </div>
+          <ul class="border border-gray-300 rounded-xl divide-y divide-gray-200 text-sm">
+            <li class="p-3 flex justify-between"><span>Below-75% alerts</span><span aria-label="On">● On</span></li>
+            <li class="p-3 flex justify-between"><span>Class reminders</span><span aria-label="On">● On</span></li>
+            <li class="p-3 flex justify-between"><span>Daily focus goal</span><span>120 min ›</span></li>
+            <li class="p-3 flex justify-between"><span>Timer settings</span><span>25 / 5 / 15 ›</span></li>
+            <li class="p-3 flex justify-between"><span>Theme</span><span>Light ›</span></li>
+          </ul>
+          <ul class="border border-gray-300 rounded-xl divide-y divide-gray-200 text-sm">
+            <li><a href="attendance-history.html" class="p-3 flex justify-between"><span>Attendance history</span><span>›</span></a></li>
+            <li><a href="analytics.html" class="p-3 flex justify-between"><span>Productivity analytics</span><span>›</span></a></li>
+            <li class="p-3 flex justify-between"><span>Privacy: what we store</span><span>›</span></li>
+            <li class="p-3 flex justify-between"><span>Help &amp; feedback</span><span>›</span></li>
+          </ul>
+          <a href="login.html" class="btn-teal text-center rounded-lg py-3 font-semibold">Log out</a>
+          <p class="text-[11px] text-center text-gray-400">App version 0.1 (wireframe)</p>
+        </div>
+      </div>
+      <nav class="flex border-t border-gray-300 bg-white">
+        <a href="student-home.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">⌂</span>Home</a>
+        <a href="scan-qr.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">▣</span>Scan</a>
+        <a href="focus-timer.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">◷</span>Focus</a>
+        <a href="tasks.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">☑</span>Tasks</a>
+        <a href="profile.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-900 font-semibold border-t-2 border-gray-900" aria-current="page"><span class="text-lg leading-none">☺</span>Profile</a>
+      </nav>
+    </div>
+    <aside class="w-full lg:w-80 bg-white border border-gray-300 rounded-xl p-5 text-sm self-start">
+      <h2 class="font-bold text-base mb-3">📝 Wireframe notes</h2>
+      <h3 class="font-semibold text-gray-700">Purpose</h3>
+      <p class="text-gray-700 mb-3">Account details, the registered device, alert and timer settings, and links to history and analytics.</p>
+      <h3 class="font-semibold text-gray-700">Key elements</h3>
+      <ul class="list-disc pl-5 text-gray-700 mb-3 space-y-1">
+          <li>Student identity: name, roll number, class, advisor</li>
+          <li>Registered device with <b>Request device change</b></li>
+          <li>Notification and goal / timer settings</li>
+          <li>Privacy page link (explains location is checked only during scans)</li>
+          <li>Log out</li>
+      </ul>
+      <h3 class="font-semibold text-gray-700">Interactions</h3>
+      <ul class="list-disc pl-5 text-gray-700 mb-3 space-y-1">
+          <li>Request device change → sends request to admin (Admin: Manage users)</li>
+          <li>Links → Attendance history, Analytics</li>
+          <li>Log out → Login</li>
+      </ul>
+      <h3 class="font-semibold text-gray-700">Linked features</h3>
+      <p class="text-gray-700">ST-2, ST-5, ST-9, ST-14, AD-4 <span class="text-gray-500">(see 04-features-and-system-flow.md)</span></p>
+    </aside>
+  </main>
+</body>
+</html>

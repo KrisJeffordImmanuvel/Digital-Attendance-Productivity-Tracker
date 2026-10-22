@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Productivity Analytics · Wireframe</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="bg-white border-b border-gray-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+      <a href="index.html" class="font-medium underline underline-offset-2">← All screens</a>
+      <span class="text-gray-400">|</span>
+      <span class="font-semibold">7. Productivity Analytics</span>
+      <span class="text-xs px-2 py-0.5 rounded bg-gray-200 text-gray-700">Student · Mobile 390×844</span>
+      <span class="ml-auto text-xs text-gray-500">Digital Attendance &amp; Productivity Tracker · Wireframe v0.1</span>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-4 py-6 flex flex-col lg:flex-row gap-6 items-center lg:items-start justify-center">
+    <div class="phone">
+      <div class="flex justify-between items-center px-6 pt-3 pb-1 text-xs text-gray-500">
+        <span>9:41</span><span>▂▄▆ 4G ▭</span>
+      </div>
+      <div class="phone-screen">
+        <div class="px-5 pt-3 pb-6 flex flex-col gap-4">
+          <div class="flex items-center gap-3"><a href="student-home.html" class="text-lg" aria-label="Back">←</a><h1 class="text-lg font-bold">Productivity</h1></div>
+          <div class="grid grid-cols-3 text-xs border border-gray-400 rounded-lg overflow-hidden">
+            <span class="py-2 text-center">Day</span><span class="py-2 text-center bg-gray-800 text-white border-l border-gray-400">Week</span><span class="py-2 text-center border-l border-gray-400">Month</span>
+          </div>
+          <div class="grid grid-cols-3 gap-2 text-center">
+            <div class="border border-gray-300 rounded-lg py-3"><p class="text-lg font-bold">7h 50m</p><p class="text-[11px] text-gray-500">Focus time</p></div>
+            <div class="border border-gray-300 rounded-lg py-3"><p class="text-lg font-bold">9</p><p class="text-[11px] text-gray-500">Tasks done</p></div>
+            <div class="border border-gray-300 rounded-lg py-3"><p class="text-lg font-bold">4 days</p><p class="text-[11px] text-gray-500">Goal streak</p></div>
+          </div>
+          <div class="border border-gray-300 rounded-xl p-4">
+            <p class="text-sm font-semibold">Focus minutes per day</p>
+            <p class="text-[11px] text-gray-500 mb-2">PLACEHOLDER CHART: bar chart</p>
+            <div class="h-36 flex items-end gap-2 border-b border-gray-300">
+                <div class="flex-1 flex flex-col items-center gap-1"><div class="w-full bg-gray-400 rounded-t" style="height:40px"></div><span class="text-[10px] text-gray-500">Mon</span></div>
+                <div class="flex-1 flex flex-col items-center gap-1"><div class="w-full bg-gray-400 rounded-t" style="height:75px"></div><span class="text-[10px] text-gray-500">Tue</span></div>
+                <div class="flex-1 flex flex-col items-center gap-1"><div class="w-full bg-gray-400 rounded-t" style="height:50px"></div><span class="text-[10px] text-gray-500">Wed</span></div>
+                <div class="flex-1 flex flex-col items-center gap-1"><div class="w-full bg-gray-400 rounded-t" style="height:100px"></div><span class="text-[10px] text-gray-500">Thu</span></div>
+                <div class="flex-1 flex flex-col items-center gap-1"><div class="w-full bg-gray-400 rounded-t" style="height:25px"></div><span class="text-[10px] text-gray-500">Fri</span></div>
+                <div class="flex-1 flex flex-col items-center gap-1"><div class="w-full bg-gray-400 rounded-t" style="height:120px"></div><span class="text-[10px] text-gray-500">Sat</span></div>
+                <div class="flex-1 flex flex-col items-center gap-1"><div class="w-full bg-gray-400 rounded-t" style="height:60px"></div><span class="text-[10px] text-gray-500">Sun</span></div>
+            </div>
+          </div>
+          <div class="border border-gray-300 rounded-xl p-4">
+            <p class="text-sm font-semibold">Focus time by subject</p>
+            <p class="text-[11px] text-gray-500 mb-2">PLACEHOLDER CHART: horizontal bars</p>
+            <div class="h-28 ph-box rounded flex items-center justify-center text-xs text-gray-500">[ chart ]</div>
+          </div>
+          <div class="border border-gray-300 rounded-xl p-4">
+            <p class="text-sm font-semibold">Attendance trend vs 75% line</p>
+            <p class="text-[11px] text-gray-500 mb-2">PLACEHOLDER CHART: line chart</p>
+            <div class="h-28 ph-box rounded flex items-center justify-center text-xs text-gray-500">[ chart ]</div>
+          </div>
+          <p class="text-xs text-gray-500 text-center">All numbers on this screen are sample placeholders.</p>
+        </div>
+      </div>
+      <nav class="flex border-t border-gray-300 bg-white">
+        <a href="student-home.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-900 font-semibold border-t-2 border-gray-900" aria-current="page"><span class="text-lg leading-none">⌂</span>Home</a>
+        <a href="scan-qr.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">▣</span>Scan</a>
+        <a href="focus-timer.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">◷</span>Focus</a>
+        <a href="tasks.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">☑</span>Tasks</a>
+        <a href="profile.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">☺</span>Profile</a>
+      </nav>
+    </div>
+    <aside class="w-full lg:w-80 bg-white border border-gray-300 rounded-xl p-5 text-sm self-start">
+      <h2 class="font-bold text-base mb-3">📝 Wireframe notes</h2>
+      <h3 class="font-semibold text-gray-700">Purpose</h3>
+      <p class="text-gray-700 mb-3">Helps students see their study pattern over time and connects effort (focus time) with attendance.</p>
+      <h3 class="font-semibold text-gray-700">Key elements</h3>
+      <ul class="list-disc pl-5 text-gray-700 mb-3 space-y-1">
+          <li>Day / Week / Month switch</li>
+          <li>Summary tiles: focus time, tasks done, goal streak</li>
+          <li><b>Placeholder</b> charts: focus per day, focus by subject, attendance trend with 75% line</li>
+      </ul>
+      <h3 class="font-semibold text-gray-700">Interactions</h3>
+      <ul class="list-disc pl-5 text-gray-700 mb-3 space-y-1">
+          <li>Back → Student Home</li>
+          <li>Tap a bar → that day's focus sessions (future)</li>
+      </ul>
+      <h3 class="font-semibold text-gray-700">Linked features</h3>
+      <p class="text-gray-700">ST-10, ST-13 <span class="text-gray-500">(see 04-features-and-system-flow.md)</span></p>
+    </aside>
+  </main>
+</body>
+</html>

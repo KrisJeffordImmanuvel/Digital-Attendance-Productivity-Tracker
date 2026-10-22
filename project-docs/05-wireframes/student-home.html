@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Home · Wireframe</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="bg-white border-b border-gray-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+      <a href="index.html" class="font-medium underline underline-offset-2">← All screens</a>
+      <span class="text-gray-400">|</span>
+      <span class="font-semibold">2. Student Home</span>
+      <span class="text-xs px-2 py-0.5 rounded bg-gray-200 text-gray-700">Student · Mobile 390×844</span>
+      <span class="ml-auto text-xs text-gray-500">Digital Attendance &amp; Productivity Tracker · Wireframe v0.1</span>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-4 py-6 flex flex-col lg:flex-row gap-6 items-center lg:items-start justify-center">
+    <div class="phone">
+      <div class="flex justify-between items-center px-6 pt-3 pb-1 text-xs text-gray-500">
+        <span>9:41</span><span>▂▄▆ 4G ▭</span>
+      </div>
+      <div class="phone-screen">
+        <div class="px-5 pt-3 pb-6 flex flex-col gap-4">
+          <div class="flex justify-between items-center">
+            <div><p class="text-xs text-gray-500">Good morning,</p><h1 class="text-xl font-bold">Kris Jefford I</h1><p class="text-xs text-gray-500">CSE-3A · 21CS045</p></div>
+            <a href="profile.html" class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center font-bold text-sm" aria-label="Profile">KJ</a>
+          </div>
+
+          <div class="border-2 border-gray-900 rounded-xl p-3 flex gap-3 items-start" role="alert">
+            <span class="text-2xl leading-none">⚠</span>
+            <div class="text-sm"><b>Operating Systems is at 72%</b> (below 75%).<br>Attend the next <b>3 classes</b> to get back to 75%.</div>
+          </div>
+
+          <div class="border border-gray-300 rounded-xl p-4 flex items-center gap-4">
+            <div class="w-24 h-24 rounded-full border-[10px] border-gray-800 border-r-gray-200 flex items-center justify-center shrink-0">
+              <span class="text-xl font-bold">81%</span>
+            </div>
+            <div class="text-sm"><p class="font-semibold">Overall attendance</p><p class="text-gray-500">101 of 125 classes</p><p class="text-xs text-gray-500 mt-1">Required: 75%</p></div>
+          </div>
+
+          <div>
+            <div class="flex justify-between items-baseline"><h2 class="font-semibold">Subject-wise</h2><a href="attendance-history.html" class="text-xs underline">History →</a></div>
+            <ul class="divide-y divide-gray-200">
+            <li class="py-2">
+              <div class="flex justify-between text-sm"><span class="">Data Structures </span><span class="font-semibold">88%</span></div>
+              <div class="h-2 bg-gray-200 rounded"><div class="h-2 rounded bg-gray-500" style="width:88%"></div></div>
+              <div class="text-[11px] text-gray-500 mt-0.5">22 / 25 classes</div>
+            </li>
+            <li class="py-2">
+              <div class="flex justify-between text-sm"><span class="">Database Management Systems </span><span class="font-semibold">84%</span></div>
+              <div class="h-2 bg-gray-200 rounded"><div class="h-2 rounded bg-gray-500" style="width:84%"></div></div>
+              <div class="text-[11px] text-gray-500 mt-0.5">21 / 25 classes</div>
+            </li>
+            <li class="py-2">
+              <div class="flex justify-between text-sm"><span class="font-semibold">Operating Systems <span class="text-[10px] font-bold border border-gray-900 rounded px-1">⚠ BELOW 75%</span></span><span class="font-semibold">72%</span></div>
+              <div class="h-2 bg-gray-200 rounded"><div class="h-2 rounded bg-gray-900" style="width:72%"></div></div>
+              <div class="text-[11px] text-gray-500 mt-0.5">18 / 25 classes</div>
+            </li>
+            <li class="py-2">
+              <div class="flex justify-between text-sm"><span class="">Computer Networks </span><span class="font-semibold">80%</span></div>
+              <div class="h-2 bg-gray-200 rounded"><div class="h-2 rounded bg-gray-500" style="width:80%"></div></div>
+              <div class="text-[11px] text-gray-500 mt-0.5">20 / 25 classes</div>
+            </li>
+            <li class="py-2">
+              <div class="flex justify-between text-sm"><span class="">Mathematics IV </span><span class="font-semibold">80%</span></div>
+              <div class="h-2 bg-gray-200 rounded"><div class="h-2 rounded bg-gray-500" style="width:80%"></div></div>
+              <div class="text-[11px] text-gray-500 mt-0.5">20 / 25 classes</div>
+            </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="font-semibold mb-2">Today's classes · Wed</h2>
+            <ul class="flex flex-col gap-2 text-sm">
+              <li class="border border-gray-300 rounded-lg p-3 flex justify-between"><span>09:00 · Data Structures</span><span class="text-gray-600">✓ Present</span></li>
+              <li class="border-2 border-gray-800 rounded-lg p-3 flex justify-between items-center"><span><b>10:00 · Operating Systems</b><br><span class="text-xs text-gray-500">Now · Room 204</span></span><a href="scan-qr.html" class="btn-orange rounded-lg px-3 py-2 text-xs font-semibold">Scan QR</a></li>
+              <li class="border border-gray-300 rounded-lg p-3 flex justify-between text-gray-500"><span>11:15 · DBMS</span><span>Upcoming</span></li>
+              <li class="border border-gray-300 rounded-lg p-3 flex justify-between text-gray-500"><span>14:00 · Computer Networks</span><span>Upcoming</span></li>
+            </ul>
+          </div>
+
+          <a href="focus-timer.html" class="border border-gray-300 rounded-xl p-4 block">
+            <div class="flex justify-between text-sm"><span class="font-semibold">Today's focus goal</span><span>50 / 120 min</span></div>
+            <div class="h-2 bg-gray-200 rounded mt-2"><div class="h-2 bg-gray-600 rounded" style="width:42%"></div></div>
+            <p class="text-xs text-gray-500 mt-1">2 Pomodoros done · <span class="underline">Open timer</span> · <span class="underline">See analytics</span></p>
+          </a>
+          <a href="analytics.html" class="text-sm underline text-center">View productivity analytics →</a>
+        </div>
+      </div>
+      <nav class="flex border-t border-gray-300 bg-white">
+        <a href="student-home.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-900 font-semibold border-t-2 border-gray-900" aria-current="page"><span class="text-lg leading-none">⌂</span>Home</a>
+        <a href="scan-qr.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">▣</span>Scan</a>
+        <a href="focus-timer.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">◷</span>Focus</a>
+        <a href="tasks.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">☑</span>Tasks</a>
+        <a href="profile.html" class="flex-1 flex flex-col items-center py-2 text-xs text-gray-500 border-t-2 border-transparent"><span class="text-lg leading-none">☺</span>Profile</a>
+      </nav>
+    </div>
+    <aside class="w-full lg:w-80 bg-white border border-gray-300 rounded-xl p-5 text-sm self-start">
+      <h2 class="font-bold text-base mb-3">📝 Wireframe notes</h2>
+      <h3 class="font-semibold text-gray-700">Purpose</h3>
+      <p class="text-gray-700 mb-3">The student's main dashboard. It answers "Where do I stand?" at a glance and leads to today's main action: scanning in class.</p>
+      <h3 class="font-semibold text-gray-700">Key elements</h3>
+      <ul class="list-disc pl-5 text-gray-700 mb-3 space-y-1">
+          <li>Overall attendance % ring</li>
+          <li><b>75% warning card</b> with classes needed to recover</li>
+          <li>Subject-wise % bars; below-75% subjects carry a text label, not just a shade</li>
+          <li>Today's classes with status; the current class shows a <b>Scan QR</b> button</li>
+          <li>Today's focus-goal progress</li>
+      </ul>
+      <h3 class="font-semibold text-gray-700">Interactions</h3>
+      <ul class="list-disc pl-5 text-gray-700 mb-3 space-y-1">
+          <li>Scan QR (orange) → Scan screen</li>
+          <li>History → Attendance history</li>
+          <li>Focus goal card → Focus timer</li>
+          <li>Avatar → Profile</li>
+      </ul>
+      <h3 class="font-semibold text-gray-700">Linked features</h3>
+      <p class="text-gray-700">ST-4, ST-5, ST-9, ST-12 <span class="text-gray-500">(see 04-features-and-system-flow.md)</span></p>
+    </aside>
+  </main>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wireframes · Digital Attendance &amp; Productivity Tracker</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="bg-white border-b border-gray-300">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+      <p class="text-xs uppercase tracking-wide text-gray-500">Venture Ideation · Planning &amp; Design · Wireframe v0.1</p>
+      <h1 class="text-2xl sm:text-3xl font-bold mt-1">Digital Attendance and Productivity Tracker for Students</h1>
+      <p class="text-sm text-gray-600 mt-2">Team: Venuprasadd M.K · Kris Jefford I · Sujith S · Vignesh K · Ajin S.S</p>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-8 flex flex-col gap-10">
+
+    <section class="bg-white border border-gray-300 rounded-xl p-5 text-sm grid gap-4 md:grid-cols-3">
+      <div>
+        <h2 class="font-semibold mb-1">How to use</h2>
+        <p class="text-gray-700">Click any screen below. Inside a screen, buttons, tabs and bottom / side navigation are clickable, and <b>← All screens</b> brings you back here. The right-hand <b>Wireframe notes</b> explain each screen's purpose.</p>
+      </div>
+      <div>
+        <h2 class="font-semibold mb-1">Style rules</h2>
+        <ul class="text-gray-700 space-y-1">
+          <li>Greyscale everywhere (it's a wireframe, not the final design).</li>
+          <li><span class="btn-teal rounded px-2 py-0.5 text-xs">Teal #0F4C5C</span> = primary button</li>
+          <li><span class="btn-orange rounded px-2 py-0.5 text-xs">Orange #E36414</span> = the single most important action on key screens</li>
+          <li>Warnings use ⚠ + text labels, never colour alone.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-semibold mb-1">Frames</h2>
+        <p class="text-gray-700">Student screens: mobile phone frame <b>390 × 844</b>.<br>Faculty and admin screens: <b>desktop</b> browser frame.<br>All names and numbers are <b>sample data</b>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold mb-1">Student · mobile</h2>
+      <p class="text-sm text-gray-500 mb-4">Main flow: Login → Home → Scan QR → (Focus timer / Tasks) → Analytics</p>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <a href="login.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">01</p><p class="font-semibold">Login</p>
+          <p class="text-sm text-gray-600 mt-1">Role tabs, roll number + password, device-binding notice.</p>
+        </a>
+        <a href="student-home.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">02</p><p class="font-semibold">Student Home</p>
+          <p class="text-sm text-gray-600 mt-1">Overall and subject %, 75% warning, today's classes.</p>
+        </a>
+        <a href="scan-qr.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">03</p><p class="font-semibold">Scan QR</p>
+          <p class="text-sm text-gray-600 mt-1">Camera placeholder with Scanning, Success and Failure states.</p>
+        </a>
+        <a href="attendance-history.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">04</p><p class="font-semibold">Attendance History</p>
+          <p class="text-sm text-gray-600 mt-1">Every class with status, filters, report a problem.</p>
+        </a>
+        <a href="focus-timer.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">05</p><p class="font-semibold">Focus Timer</p>
+          <p class="text-sm text-gray-600 mt-1">Pomodoro countdown linked to a task or subject.</p>
+        </a>
+        <a href="tasks.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">06</p><p class="font-semibold">Tasks</p>
+          <p class="text-sm text-gray-600 mt-1">To-do list with subjects, due dates and a daily goal.</p>
+        </a>
+        <a href="analytics.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">07</p><p class="font-semibold">Productivity Analytics</p>
+          <p class="text-sm text-gray-600 mt-1">Summary tiles and placeholder charts.</p>
+        </a>
+        <a href="profile.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">08</p><p class="font-semibold">Profile</p>
+          <p class="text-sm text-gray-600 mt-1">Registered device, alert and timer settings, log out.</p>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold mb-1">Faculty · desktop</h2>
+      <p class="text-sm text-gray-500 mb-4">Main flow: Start Session → Live QR → End session → Class report</p>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="faculty-start-session.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">09</p><p class="font-semibold">Start Session</p>
+          <p class="text-sm text-gray-600 mt-1">Pick class, subject and period; see active anti-proxy checks.</p>
+        </a>
+        <a href="faculty-live-qr.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">10</p><p class="font-semibold">Live QR</p>
+          <p class="text-sm text-gray-600 mt-1">QR that changes every 10 s, live present count, manual mark.</p>
+        </a>
+        <a href="faculty-class-report.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">11</p><p class="font-semibold">Class Report</p>
+          <p class="text-sm text-gray-600 mt-1">Per-student %, below-75% rows highlighted, export CSV.</p>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold mb-1">Admin · desktop</h2>
+      <p class="text-sm text-gray-500 mb-4">Setup and monitoring for the whole college</p>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="admin-overview.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">12</p><p class="font-semibold">Overview</p>
+          <p class="text-sm text-gray-600 mt-1">KPI tiles, department table, live sessions, requests.</p>
+        </a>
+        <a href="admin-users.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">13</p><p class="font-semibold">Manage Users</p>
+          <p class="text-sm text-gray-600 mt-1">User table, CSV import, device-change approvals.</p>
+        </a>
+        <a href="admin-geofence.html" class="bg-white border border-gray-300 rounded-xl p-4 hover:border-gray-800">
+          <p class="text-xs text-gray-500">14</p><p class="font-semibold">Campus Geofence</p>
+          <p class="text-sm text-gray-600 mt-1">Campus zones on a map placeholder and attendance rules.</p>
+        </a>
+      </div>
+    </section>
+
+    <footer class="text-xs text-gray-500 border-t border-gray-300 pt-4">
+      Planning documents: see <code>../01-problem-and-idea.md</code> to <code>../04-features-and-system-flow.md</code> in the <code>project-docs</code> folder. Feature IDs in each screen's notes (e.g., ST-3, FA-2) refer to the feature table in document 04.
+    </footer>
+  </main>
+</body>
+</html>
