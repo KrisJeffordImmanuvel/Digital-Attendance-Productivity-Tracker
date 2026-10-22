@@ -37,11 +37,7 @@ var DESCRIPTION =
   'Your answers are used only to study this problem and will not be shared.';
 
 // Shown to every student right after they submit the form.
-var THANK_YOU =
-  'Thank you for filling in our survey! 🙏\n\n' +
-  'Your answers will help our team (Venuprasadd M.K, Kris Jefford I, Sujith S, ' +
-  'Vignesh K and Ajin S.S) design a better attendance and study app for students. ' +
-  'Your response is anonymous.';
+var THANK_YOU = 'Thank you for filling in our survey! 🙏 Your response has been recorded.';
 
 function createStudentForm() {
   var form = buildForm_('Student Survey: Attendance and Study Habits', STUDENT_QUESTIONS);

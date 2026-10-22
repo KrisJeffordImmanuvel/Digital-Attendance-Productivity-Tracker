@@ -27,7 +27,7 @@ We are surveying **students only** (no faculty survey).
 8. Add this line to the form description:
    > *This is an anonymous survey for a college entrepreneurship project. Your answers are used only to study this problem and will not be shared.*
 9. Add a thank-you message: **Settings → Presentation → Confirmation message**, then paste:
-   > *Thank you for filling in our survey! 🙏 Your answers will help our team (Venuprasadd M.K, Kris Jefford I, Sujith S, Vignesh K and Ajin S.S) design a better attendance and study app for students. Your response is anonymous.*
+   > *Thank you for filling in our survey! 🙏 Your response has been recorded.*
 10. To export later: **Responses → three-dot menu → Download responses (.csv)**.
 
 ---
