@@ -13,7 +13,7 @@ We are surveying **students only** (no faculty survey).
 
 ## How to set this up in Google Forms
 
-> **Fastest way:** run `create_google_forms.gs`. It builds the student form automatically in your Google account, with the exact wording, question types, "Other" options, 1–5 scales and the "up to 3" limit on S12. Open <https://script.google.com>, click **New project**, paste the whole file, click **Save**, choose `createStudentForm` and click **Run**. Allow the permission prompt, then copy the share and edit links from the **Execution log**.
+> **Fastest way:** run `create_google_forms.gs`. It builds the student form automatically in your Google account, with the exact wording, question types, "Other" options, 1–5 scales and the "up to 3" limit on S12, plus a thank-you message shown after submitting. Open <https://script.google.com>, click **New project**, paste the whole file, click **Save**, choose `createStudentForm` and click **Run**. Allow the permission prompt, then copy the share and edit links from the **Execution log**.
 >
 > To do it by hand instead, follow the steps below.
 
@@ -26,7 +26,9 @@ We are surveying **students only** (no faculty survey).
 7. Turn **off** "Collect email addresses" so that responses stay anonymous.
 8. Add this line to the form description:
    > *This is an anonymous survey for a college entrepreneurship project. Your answers are used only to study this problem and will not be shared.*
-9. To export later: **Responses → three-dot menu → Download responses (.csv)**.
+9. Add a thank-you message: **Settings → Presentation → Confirmation message**, then paste:
+   > *Thank you for filling in our survey! 🙏 Your answers will help our team (Venuprasadd M.K, Kris Jefford I, Sujith S, Vignesh K and Ajin S.S) design a better attendance and study app for students. Your response is anonymous.*
+10. To export later: **Responses → three-dot menu → Download responses (.csv)**.
 
 ---
 

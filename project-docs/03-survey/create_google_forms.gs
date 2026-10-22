@@ -36,6 +36,13 @@ var DESCRIPTION =
   'This is an anonymous survey for a college entrepreneurship project. ' +
   'Your answers are used only to study this problem and will not be shared.';
 
+// Shown to every student right after they submit the form.
+var THANK_YOU =
+  'Thank you for filling in our survey! 🙏\n\n' +
+  'Your answers will help our team (Venuprasadd M.K, Kris Jefford I, Sujith S, ' +
+  'Vignesh K and Ajin S.S) design a better attendance and study app for students. ' +
+  'Your response is anonymous.';
+
 function createStudentForm() {
   var form = buildForm_('Student Survey: Attendance and Study Habits', STUDENT_QUESTIONS);
   report_('STUDENT form', form);
@@ -44,6 +51,7 @@ function createStudentForm() {
 function buildForm_(title, questions) {
   var form = FormApp.create(title);
   form.setDescription(DESCRIPTION);
+  form.setConfirmationMessage(THANK_YOU);
   form.setCollectEmail(false);       // keep responses anonymous
   form.setProgressBar(false);
   form.setShowLinkToRespondAgain(false);
