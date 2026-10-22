@@ -16,8 +16,8 @@ A mobile-friendly app (PWA) where faculty show a QR code that **changes every 10
 |---|---|
 | `01-problem-and-idea.md` | Problem statement, who is affected and their pain points, root causes, our solution, unique value proposition, target customers, and the **assumptions we must test** with the survey |
 | `02-existing-solutions-study.md` | Comparison of manual roll call, RFID, fingerprint, face recognition, QR apps and productivity apps; references; **"Gap we fill"**. Items to check are marked **[VERIFY]** |
-| `03-survey/survey-questions.md` | Student form (12 questions) and faculty form (8 questions), ready to copy into Google Forms, with question types |
-| `03-survey/create_google_forms.gs` | Google Apps Script that **creates both Google Forms automatically** (paste into script.google.com and run `createBothForms`) |
+| `03-survey/survey-questions.md` | Student survey (12 questions), ready to copy into Google Forms, with question types. We survey **students only** |
+| `03-survey/create_google_forms.gs` | Google Apps Script that **creates the student Google Form automatically** (paste into script.google.com and run `createStudentForm`) |
 | `03-survey/responses-template.csv` | Empty CSV with the student-form column headers (same as the Google Forms export) |
 | `03-survey/sample-test.csv` | **5 rows of TEST DATA, not real responses.** Only for checking that the script runs |
 | `03-survey/analyze_survey.py` | Reads the exported CSV and creates charts (PNG) plus `survey-summary.md` |
@@ -69,10 +69,9 @@ You will see a **WARNING** that sample data is being used. Output goes to `outpu
 
 ```bash
 python analyze_survey.py student-responses.csv
-python analyze_survey.py faculty-responses.csv --form faculty
 ```
 
-4. Open `output-student/survey-summary.md` and `output-faculty/survey-summary.md`. They contain counts, percentages, averages for 1–5 scales, and a PNG chart for each question (teal `#0F4C5C`, with the most common answer highlighted in orange `#E36414`).
+4. Open `output-student/survey-summary.md`. It contains counts, percentages, averages for 1–5 scales, and a PNG chart for each question (teal `#0F4C5C`, with the most common answer highlighted in orange `#E36414`).
 
 **If the script says a question was "not found":** the question wording in your Google Form is different from `survey-questions.md`. Either fix the form, or edit the `QUESTIONS` list at the top of `analyze_survey.py` to match.
 
@@ -81,14 +80,12 @@ python analyze_survey.py faculty-responses.csv --form faculty
 ## ✅ Team checklist: things we must do ourselves
 
 **Survey**
-- [ ] Create both Google Forms by running `03-survey/create_google_forms.gs` at script.google.com (or build them by hand from `survey-questions.md`, copying the wording exactly).
-- [ ] Edit the faculty form's F1 department list to match our college.
-- [ ] Get our guide's OK on both forms before sending.
-- [ ] Send the forms (class WhatsApp groups, department email, in person).
+- [ ] Create the student Google Form by running `03-survey/create_google_forms.gs` at script.google.com (or build it by hand from `survey-questions.md`, copying the wording exactly).
+- [ ] Get our guide's OK on the form before sending.
+- [ ] Send the form link (class WhatsApp groups, department email, in person).
 - [ ] Collect **at least 25–30 student responses** (more is better; try to cover different years and departments).
-- [ ] Collect **at least 5 faculty responses**.
-- [ ] Download both CSV exports and run `analyze_survey.py` on them.
-- [ ] Read `survey-summary.md` and write our **real findings** against assumptions A1–A9 in `01-problem-and-idea.md`. If an assumption is **not** supported, say so honestly and adjust the features.
+- [ ] Download the CSV export and run `analyze_survey.py` on it.
+- [ ] Read `survey-summary.md` and write our **real findings** against assumptions A1–A9 in `01-problem-and-idea.md`. If an assumption is **not** supported, say so honestly and adjust the features. A7 and A8 (faculty) are not covered by the student survey, so list them as "not yet validated".
 
 **Fact-checking**
 - [ ] Review every **[VERIFY]** item in `02-existing-solutions-study.md` and `04-features-and-system-flow.md`.

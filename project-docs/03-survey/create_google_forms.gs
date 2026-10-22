@@ -1,22 +1,20 @@
 /**
- * Creates the two survey Google Forms for
+ * Creates the student survey Google Form for
  * "Digital Attendance and Productivity Tracker for Students".
  *
  * HOW TO USE (takes about 2 minutes):
  *   1. Go to https://script.google.com and click "New project".
  *   2. Delete the sample code, paste this whole file, and click Save.
- *   3. In the toolbar, choose the function "createBothForms" and click Run.
+ *   3. In the toolbar, choose the function "createStudentForm" and click Run.
  *   4. The first time, Google asks for permission ("Review permissions" ->
  *      choose your account -> Advanced -> Go to project -> Allow).
- *      This lets the script create forms in YOUR Google Drive only.
+ *      This lets the script create a form in YOUR Google Drive only.
  *   5. Open "Execution log" at the bottom: it prints the link to share
- *      and the link to edit each form. Both forms also appear in Google Drive.
+ *      and the link to edit the form. The form also appears in Google Drive.
  *
  * The question wording here is generated from analyze_survey.py, so the CSV
  * you download later will match the analysis script. If you edit a question
  * in Google Forms, also edit QUESTIONS in analyze_survey.py.
- *
- * Before sharing: change the F1 department list to match our college.
  */
 
 var STUDENT_QUESTIONS = [
@@ -34,26 +32,13 @@ var STUDENT_QUESTIONS = [
     {"id": "S12", "type": "checkbox", "title": "Which features would matter most to you? (Choose up to 3)", "choices": ["Quick QR attendance", "Live attendance % for each subject", "Alert when I go below 75%", "Pomodoro focus timer", "To-do tasks and daily goals", "Study time analytics"], "other": true, "maxChecked": 3}
   ];
 
-var FACULTY_QUESTIONS = [
-    {"id": "F1", "type": "choice", "title": "Which department do you teach in?", "choices": ["CSE", "IT", "ECE", "EEE", "Mechanical", "Civil", "Science and Humanities"], "other": true},
-    {"id": "F2", "type": "choice", "title": "How do you currently take attendance?", "choices": ["Roll call", "Paper sheet", "Biometric or ID card machine", "An app or software"], "other": true},
-    {"id": "F3", "type": "choice", "title": "On average, how many minutes of each lecture do you spend on attendance?", "choices": ["Less than 2 minutes", "2 to 5 minutes", "5 to 10 minutes", "More than 10 minutes"], "other": false},
-    {"id": "F4", "type": "scale", "title": "How often do you face proxy attendance problems?", "low": "Never", "high": "Very often"},
-    {"id": "F5", "type": "choice", "title": "How much time do you spend each month on attendance registers and reports?", "choices": ["Less than 1 hour", "1 to 3 hours", "3 to 6 hours", "More than 6 hours"], "other": false},
-    {"id": "F6", "type": "scale", "title": "How willing would you be to use a QR-based attendance app that blocks proxies (changing QR code + campus location check + one device per student)?", "low": "Not willing", "high": "Very willing"},
-    {"id": "F7", "type": "checkbox", "title": "What concerns would you have about using such an app? (Tick all that apply)", "choices": ["Some students do not have smartphones", "Poor mobile network in classrooms", "Student privacy", "Time needed to learn a new system", "No projector or screen in some rooms", "Technical problems during class", "No concerns"], "other": true},
-    {"id": "F8", "type": "text", "title": "Any suggestions or features you would like to see?"}
-  ];
-
 var DESCRIPTION =
   'This is an anonymous survey for a college entrepreneurship project. ' +
   'Your answers are used only to study this problem and will not be shared.';
 
-function createBothForms() {
-  var student = buildForm_('Student Survey: Attendance and Study Habits', STUDENT_QUESTIONS);
-  var faculty = buildForm_('Faculty Survey: Attendance Process', FACULTY_QUESTIONS);
-  report_('STUDENT form', student);
-  report_('FACULTY form', faculty);
+function createStudentForm() {
+  var form = buildForm_('Student Survey: Attendance and Study Habits', STUDENT_QUESTIONS);
+  report_('STUDENT form', form);
 }
 
 function buildForm_(title, questions) {
@@ -84,7 +69,7 @@ function buildForm_(title, questions) {
       item.setRequired(true);
     } else if (q.type === 'text') {
       item = form.addTextItem().setTitle(q.title);
-      item.setRequired(false);         // optional suggestions question
+      item.setRequired(false);         // short-answer questions are optional
     }
   });
   return form;
