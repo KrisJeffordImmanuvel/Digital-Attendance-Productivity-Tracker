@@ -17,6 +17,7 @@ A mobile-friendly app (PWA) where faculty show a QR code that **changes every 10
 | `01-problem-and-idea.md` | Problem statement, who is affected and their pain points, root causes, our solution, unique value proposition, target customers, and the **assumptions we must test** with the survey |
 | `02-existing-solutions-study.md` | Comparison of manual roll call, RFID, fingerprint, face recognition, QR apps and productivity apps; references; **"Gap we fill"**. Items to check are marked **[VERIFY]** |
 | `03-survey/survey-questions.md` | Student form (12 questions) and faculty form (8 questions), ready to copy into Google Forms, with question types |
+| `03-survey/create_google_forms.gs` | Google Apps Script that **creates both Google Forms automatically** (paste into script.google.com and run `createBothForms`) |
 | `03-survey/responses-template.csv` | Empty CSV with the student-form column headers (same as the Google Forms export) |
 | `03-survey/sample-test.csv` | **5 rows of TEST DATA, not real responses.** Only for checking that the script runs |
 | `03-survey/analyze_survey.py` | Reads the exported CSV and creates charts (PNG) plus `survey-summary.md` |
@@ -80,8 +81,8 @@ python analyze_survey.py faculty-responses.csv --form faculty
 ## ✅ Team checklist: things we must do ourselves
 
 **Survey**
-- [ ] Create the **student** Google Form from `03-survey/survey-questions.md` (copy the wording exactly).
-- [ ] Create the **faculty** Google Form (edit the F1 department list to match our college).
+- [ ] Create both Google Forms by running `03-survey/create_google_forms.gs` at script.google.com (or build them by hand from `survey-questions.md`, copying the wording exactly).
+- [ ] Edit the faculty form's F1 department list to match our college.
 - [ ] Get our guide's OK on both forms before sending.
 - [ ] Send the forms (class WhatsApp groups, department email, in person).
 - [ ] Collect **at least 25–30 student responses** (more is better; try to cover different years and departments).

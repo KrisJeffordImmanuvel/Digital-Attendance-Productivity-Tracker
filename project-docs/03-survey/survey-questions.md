@@ -14,6 +14,10 @@ There are two short forms:
 
 ## How to set this up in Google Forms
 
+> **Fastest way:** run `create_google_forms.gs`. It builds both forms automatically in your Google account, with the exact wording, question types, "Other" options, 1–5 scales and the "up to 3" limit on S12. Open <https://script.google.com>, click **New project**, paste the whole file, click **Save**, choose `createBothForms` and click **Run**. Allow the permission prompt, then copy the share and edit links from the **Execution log**. Edit the F1 department list before sharing.
+>
+> To do it by hand instead, follow the steps below.
+
 1. Create **two separate Google Forms**: one for students and one for faculty.
 2. Copy each question **exactly as written** (without the "S1." / "F1." label). The analysis script matches the column headers in the export to this wording. If you change the wording, also update `QUESTIONS` at the top of `analyze_survey.py`.
 3. Choose the question type shown in the **Type** line of each question.
