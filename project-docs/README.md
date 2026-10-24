@@ -19,6 +19,7 @@ A mobile-friendly app (PWA) where faculty show a QR code that **changes every 10
 | `03-survey/survey-questions.md` | Student survey (12 questions), ready to copy into Google Forms, with question types. We survey **students only** |
 | `03-survey/create_google_forms.gs` | Google Apps Script that **creates the student Google Form automatically** (paste into script.google.com and run `createStudentForm`) |
 | `03-survey/responses-template.csv` | Empty CSV with the student-form column headers (same as the Google Forms export) |
+| `03-survey/results/` | **Real survey results (31 students):** `findings.md` (assumption check and suggestions), `survey-summary.md` (all counts) and one chart per question |
 | `03-survey/sample-test.csv` | **5 rows of TEST DATA, not real responses.** Only for checking that the script runs |
 | `03-survey/analyze_survey.py` | Reads the exported CSV and creates charts (PNG) plus `survey-summary.md` |
 | `04-features-and-system-flow.md` | Features by role with MoSCoW priority, user stories with acceptance criteria, Mermaid diagrams (use case, QR sequence, architecture, user flows, ER), data entities, business model canvas, and pilot cost estimate (INR) |
@@ -83,9 +84,9 @@ python analyze_survey.py student-responses.csv
 - [ ] Create the student Google Form by running `03-survey/create_google_forms.gs` at script.google.com (or build it by hand from `survey-questions.md`, copying the wording exactly).
 - [ ] Get our guide's OK on the form before sending.
 - [ ] Send the form link (class WhatsApp groups, department email, in person).
-- [ ] Collect **at least 25–30 student responses** (more is better; try to cover different years and departments).
-- [ ] Download the CSV export and run `analyze_survey.py` on it.
-- [ ] Read `survey-summary.md` and write our **real findings** against assumptions A1–A9 in `01-problem-and-idea.md`. If an assumption is **not** supported, say so honestly and adjust the features. A7 and A8 (faculty) are not covered by the student survey, so list them as "not yet validated".
+- [x] Collect **at least 25–30 student responses** (more is better; try to cover different years and departments).
+- [x] Download the CSV export and run `analyze_survey.py` on it (31 responses → `03-survey/results/`).
+- [ ] Review the draft in `03-survey/results/findings.md` together and decide on its suggested changes. Then read `survey-summary.md` and write our **real findings** against assumptions A1–A9 in `01-problem-and-idea.md`. If an assumption is **not** supported, say so honestly and adjust the features. A7 and A8 (faculty) are not covered by the student survey, so list them as "not yet validated".
 
 **Fact-checking**
 - [ ] Review every **[VERIFY]** item in `02-existing-solutions-study.md` and `04-features-and-system-flow.md`.

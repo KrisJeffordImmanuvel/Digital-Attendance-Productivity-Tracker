@@ -127,7 +127,8 @@ def count_choice(values, options):
 
 
 def count_checkbox(values, options):
-    """Checkbox answers look like 'A, B, Other text'. Count each known option once per person."""
+    """Checkbox answers look like 'A, B, Other text' or 'A;B;Other text' (newer Google Forms
+    exports use semicolons). Count each known option once per person."""
     counts = OrderedDict((opt, 0) for opt in options)
     for v in values:
         remaining = normalise(v)
@@ -137,7 +138,7 @@ def count_checkbox(values, options):
             if normalise(opt) in remaining:
                 counts[opt] += 1
                 remaining = remaining.replace(normalise(opt), "", 1)
-        leftover = remaining.replace(",", " ").strip()
+        leftover = remaining.replace(",", " ").replace(";", " ").strip()
         if leftover:
             counts.setdefault("Other", 0)
             counts["Other"] += 1
@@ -219,7 +220,7 @@ def pie_chart(q, counts, base, path, sample):
            counterclock=False, wedgeprops={"edgecolor": "white", "linewidth": 2},
            textprops={"color": INK, "fontsize": 9})
     ax.axis("equal")
-    ax.set_title(f"{q['id']}. {wrap(q['text'], 70)}", loc="left", color=INK, fontsize=10.5)
+    ax.set_title(f"{q['id']}. {wrap(q['text'], 70)}", loc="left", color=INK, fontsize=10.5, pad=24)
     if sample:
         add_sample_stamp(fig)
     fig.tight_layout()
