@@ -68,3 +68,5 @@ Question IDs (S1–S12, student survey) refer to `03-survey/survey-questions.md`
 | A9 | Students accept a location check only at the moment of scanning | S10 | Most students are comfortable (4–5) |
 
 > If the survey does **not** support an assumption, we will write that honestly in our report and change the idea (for example, drop or reprioritise a feature).
+
+**Survey result (31 students, Oct 2026):** A1, A2, A4 and A5 are **supported**. A3 (proxies), A6 (interest) and A9 (location check) are **not supported** at our targets. A7 and A8 were **not tested**. Details and suggested changes are in [`03-survey/results/findings.md`](03-survey/results/findings.md).
